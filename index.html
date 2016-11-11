@@ -1,0 +1,32 @@
+<!-- homework -->
+<!DOCTYPE html>
+<html ng-app='VictApp'>
+
+<head>
+    <title>Victims and Volunteers</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body ng-controller='victimController as vctCtrl'>
+
+<!-- 	<button ng-click='vctCtrl.ask()'>Begin</button>
+ -->
+ 	<input type="text" placeholder="Number of Victims" ng-model='vctCtrl.askNum'>
+ 	<button ng-click='vctCtrl.ask()'>Submit</button>
+    <form>
+        <div class="styling" >
+        # of Victims: {{ vctCtrl.askNum }} 
+        </div>
+
+        <!-- repeat div for new victim objects -->
+        <div ng-repeat='person in vctCtrl.victims'> 
+        {{person.name}},{{person.phone}},{{person.street}}
+        </div>
+
+    </form>
+
+    <script type="text/javascript" src="vict_volunteers.js"></script>
+</body>
+
+</html>
